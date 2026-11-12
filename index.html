@@ -8,12 +8,54 @@
   <title>ADISHIV | Aditi Jha & Shivesh Pathak</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+
+<script>
+    // Disable right-click
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    // Disable common copy/cut/select shortcuts
+    document.addEventListener("keydown", function (e) {
+        if (
+            (e.ctrlKey || e.metaKey) &&
+            ["c", "x", "a", "u", "s", "p"].includes(e.key.toLowerCase())
+        ) {
+            e.preventDefault();
+        }
+
+        // Disable F12 and common DevTools shortcuts
+        if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase()))
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    // Prevent copy/cut
+    document.addEventListener("copy", function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener("cut", function (e) {
+        e.preventDefault();
+    });
+
+    // Prevent text selection
+    document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+    });
+</script>
+
+
 <body>
 
 <div class="opening-screen" id="openingScreen" role="button" tabindex="0" aria-label="Tap to open wedding invitation">
   <div class="opening-glow"></div>
-  <div class="mandala mandala-one">✦</div>
-  <div class="mandala mandala-two">❈</div>
+  <div class="mandala mandala-one">🌸🌸</div>
+  <div class="mandala mandala-two">🌸🌸</div>
   <img class="opening-ganesha" src="images/ganesh-opening.png" alt="Lord Ganesha">
   <img class="opening-flowers" src="images/falling-flowers.gif" alt="" aria-hidden="true">
   <div class="opening-copy">
@@ -46,14 +88,15 @@
     <div class="hero-frame"></div>
     <div class="hero-overlay reveal">
       <p class="ganesh-mantra">॥ श्री गणेशाय नमः ॥</p>
-      <p class="eyebrow">A Celebration of Love</p>
+      <p class="eyebrow">A Journey Blessed by the Gods</p>
       <img class="adishiv-logo-image" src="images/adishiv-logo.png" alt="ADISHIV wedding logo">
-      <div class="gold-rule"><span>✦✦✦</span></div>
+      <div class="gold-rule"><span>🪷 ॐ 🪷</span></div>
       <div class="couple-names">
         <div><strong>Aditi Jha</strong><span>Bride</span></div>
         <div class="name-heart">💕</div>
         <div><strong>Shivesh Pathak</strong><span>Groom</span></div>
       </div>
+      
       <p class="hero-subtitle">With the blessings of Lord Ganesha and our families, we invite you to celebrate our beautiful journey together.</p>
       <a class="btn hero-btn" href="#invitation">View Invitation <span>↓</span></a>
     </div>
@@ -254,30 +297,185 @@
     </div>
 
 </section>
-  <section class="section ring-section" id="ring-ceremony">
+  <!-- <section class="section ring-section" id="ring-ceremony">
     <img class="floating-gif ring-gif" src="images/falling-flowers.gif" alt="" aria-hidden="true">
     <p class="eyebrow">A beautiful beginning</p>
     <h2>Ring Ceremony</h2>
     <div class="divider">❈ 💍 ❈</div>
     <p class="section-subtitle">Six little moments from a beautiful promise.</p>
-    <div class="photo-grid">
-      <div class="event-image-wrap" ><img src="images/Engagement_Image_1st.jpg" alt="Animated wedding ceremony"></div>
-      <div class="event-image-wrap"><img src="images/Engagement_Image_2nd.jpg" alt="Animated wedding ceremony"></div>
-      <div class="event-image-wrap"><img src="images/Engagement_Image_3rd.jpg" alt="Animated wedding ceremony"></div>
-      <div class="event-image-wrap"><img src="images/Engagement_Image_4th.jpg" alt="Animated wedding ceremony"></div>
-      <div class="event-image-wrap"><img src="images/Engagement_Image_5th.jpg" alt="Animated wedding ceremony"></div>
-      <div class="event-image-wrap"><img src="images/Engagement_Image_6th.jpg" alt="Animated wedding ceremony"></div>
+   
+    <div class="ring-photo-grid">
+
+    <div class="ring-photo-card">
+        <img src="images/Engagement_Image_1st.jpg" alt="Ring Ceremony moment">
+    </div>
+
+    <div class="ring-photo-card">
+        <img src="images/Engagement_Image_2nd.jpg" alt="Ring Ceremony moment">
+    </div>
+
+    <div class="ring-photo-card">
+        <img src="images/Engagement_Image_3rd.jpg" alt="Ring Ceremony moment">
+    </div>
+
+    <div class="ring-photo-card">
+        <img src="images/Engagement_Image_4th.jpg" alt="Ring Ceremony moment">
+    </div>
+
+    <div class="ring-photo-card">
+        <img src="images/Engagement_Image_5th.jpg" alt="Ring Ceremony moment">
+    </div>
+
+    <div class="ring-photo-card">
+        <img src="images/Engagement_Image_6th.jpg" alt="Ring Ceremony moment">
+    </div>
+
+</div>
+  </section> -->
+
+<!-- =========================================
+     RING CEREMONY
+     ========================================= -->
+
+<section class="section ring-section" id="ring-ceremony">
+
+    <img
+        class="floating-gif ring-gif"
+        src="images/falling-flowers.gif"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <p class="eyebrow">A beautiful beginning</p>
+
+    <h2>Ring Ceremony</h2>
+
+    <div class="divider">
+        ❈ 💍 ❈
+    </div>
+
+    <p class="section-subtitle">
+        Six little moments from a beautiful promise.
+    </p>
+
+
+    <!-- =========================================
+         ANIMATION CONTAINER
+         ========================================= -->
+
+    <div class="ring-animation-area">
+
+        <!-- Falling flower petals -->
+        <div
+            class="ring-petals"
+            aria-hidden="true"
+        >
+            <span>🏵️</span>
+            <span>🌸</span>
+            <span>🌸</span>
+            <span>🌺</span>
+            <span>🏵️</span>
+            <span>🌺</span>
+        </div>
+
+
+        <!-- =========================================
+             REALISTIC WHITE BUTTERFLIES
+             ========================================= -->
+
+        <div
+            class="ring-butterflies"
+            aria-hidden="true"
+        >
+<video
+    class="ring-butterfly butterfly-1"
+     src="videos/butterflies_video.webm"
+    autoplay
+    muted
+    loop
+    playsinline>
+</video>
+<video
+    class="ring-butterfly butterfly-2"
+     src="videos/butterflies_video.webm"
+    autoplay
+    muted
+    loop
+    playsinline>
+</video>
+<video
+    class="ring-butterfly butterfly-3"
+     src="videos/butterflies_video.webm"
+    autoplay
+    muted
+    loop
+    playsinline>
+</video>
+<video
+    class="ring-butterfly butterfly-4"
+     src="videos/butterflies_video.webm"
+    autoplay
+    muted
+    loop
+    playsinline>
+</video>
+
+
+          
+
+        </div>
+
+
+        <!-- =========================================
+             SIX RING CEREMONY IMAGES
+             ========================================= -->
+
+        <div class="ring-photo-grid">
+
+            <div class="ring-photo-card">
+                <img
+                    src="images/Engagement_Image_1st.jpg"
+                    alt="Ring Ceremony moment 1"
+                >
+            </div>
+
+            <div class="ring-photo-card">
+                <img
+                    src="images/Engagement_Image_2nd.jpg"
+                    alt="Ring Ceremony moment 2"
+                >
+            </div>
+
+            <div class="ring-photo-card">
+                <img
+                    src="images/Engagement_Image_3rd.jpg"
+                    alt="Ring Ceremony moment 3"
+                >
+            </div>
+
+            <div class="ring-photo-card">
+                <img
+                    src="images/Engagement_Image_4th.jpg"
+                    alt="Ring Ceremony moment 4"
+                >
+            </div>
+
+        </div>
 
     </div>
-  </section>
+
+</section>
+
+
+
 
   <section class="section venue-section" id="venue">
     <h1 class="eyebrow">Join us</h1>
-    <h2>The Venue</h2>
+    <h1>The Venue</h1>
     <div class="venue-card reveal">
-      <div class="venue-icon">✦</div>
+      <div class="venue-icon">✦🏛️✦</div>
       <h3>Venue</h3>
-      <h2>Our Residence, Barahiya, Lakhisarai, Bihar</h2>
+      <h1>Our Residence, Barahiya, Lakhisarai, Bihar</h1>
     </div>
   </section>
 </main>
@@ -287,7 +485,7 @@
   <h2 class="footer-logo">ADISHIV</h2>
   <p>Aditi Jha & Shivesh Pathak</p>
   <p>With love, laughter & forever.</p>
-  <p>© 2026 ADISHIV Wedding</p>
+  <div style="font-size: 12px">© 2026 Abhay Pathak</div>
 </footer>
 
 <script src="script.js"></script>

@@ -1,3 +1,11 @@
+/*Copy text restriction*/
+
+
+
+
+
+/*end*/
+
 const openingScreen = document.getElementById("openingScreen");
 const weddingMusic = document.getElementById("weddingMusic");
 const hamburger = document.getElementById("hamburger");
@@ -79,4 +87,127 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll(".reveal").forEach((element, index) => {
   element.style.transitionDelay = `${Math.min(index * 70, 350)}ms`;
   revealObserver.observe(element);
+});
+
+
+/*Autoscroll*/
+/* =========================================
+   ADISHIV AUTO SCROLL
+========================================= */
+
+let autoScroll = false;
+let scrollSpeed = 0.5;
+
+function startAutoScroll() {
+
+    if (autoScroll) return;
+
+    autoScroll = true;
+
+    function scrollPage() {
+
+        if (!autoScroll) return;
+
+        window.scrollBy(0, scrollSpeed);
+
+        // Stop at bottom
+        if (
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 2
+        ) {
+            autoScroll = false;
+            return;
+        }
+
+        requestAnimationFrame(scrollPage);
+    }
+
+    requestAnimationFrame(scrollPage);
+}
+
+function stopAutoScroll() {
+    autoScroll = false;
+}
+//startAutoScroll();
+
+/*js for 6 imagers cards*/
+/* =========================================================
+   RING CEREMONY
+   BUTTERFLY ANIMATION
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const butterflies =
+        document.querySelectorAll(".ring-butterfly");
+
+
+    /* =========================================
+       Give each butterfly a different delay
+       ========================================= */
+
+    butterflies.forEach(function (butterfly, index) {
+
+        butterfly.style.animationDelay =
+            `${index * -4}s`;
+
+    });
+
+
+    /* =========================================
+       Slight natural floating movement
+       ========================================= */
+
+    butterflies.forEach(function (butterfly) {
+
+        let time =
+            Math.random() * Math.PI * 2;
+
+        const speed =
+            0.008 + Math.random() * 0.006;
+
+        function naturalFloat() {
+
+            time += speed;
+
+            /*
+               Small vertical floating movement.
+               This is intentionally subtle so the
+               main flight path remains smooth.
+            */
+
+            const floatY =
+                Math.sin(time) * 5;
+
+            const floatX =
+                Math.cos(time * 0.7) * 3;
+
+
+            /*
+               We don't directly modify transform here,
+               because CSS controls the main flight path.
+               Instead, use a CSS custom property.
+            */
+
+            butterfly.style.setProperty(
+                "--natural-x",
+                `${floatX}px`
+            );
+
+            butterfly.style.setProperty(
+                "--natural-y",
+                `${floatY}px`
+            );
+
+
+            requestAnimationFrame(
+                naturalFloat
+            );
+        }
+
+
+        naturalFloat();
+
+    });
+
 });
