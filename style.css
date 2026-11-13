@@ -250,27 +250,27 @@ body {
 }
 
 /*Copy text restriction*/
-/* Prevent text selection */
+/* Prevent text selection 
 body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
-
-/* Prevent dragging images */
+*/
+/* Prevent dragging images 
 body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
-
-img {
+*/
+/* img {
     -webkit-user-drag: none;
     user-select: none;
     -webkit-user-select: none;
-}
+} */
 
 
 /*new css for 6 image cards*/
@@ -980,7 +980,16 @@ img {
 .scroll-not {
     color: red;
     font-weight: bold;
-    padding: 4px;
     display: inline-block;
      text-shadow: 2px 2px 4px rgba(244, 226, 226, 0.6);
+}
+
+@media (max-width: 768px) {
+    .scroll-not {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
