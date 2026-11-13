@@ -980,7 +980,7 @@ img {
 .scroll-not {
     color: red;
     font-weight: bold;
-    padding: 8px 15px 20px;
+    padding: 4px;
     display: inline-block;
      text-shadow: 2px 2px 4px rgba(244, 226, 226, 0.6);
 }
